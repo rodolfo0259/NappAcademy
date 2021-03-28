@@ -40,7 +40,7 @@ class Pedido:
         quantidade = 0
         for produto in self._itens:
             if produto.ean == ean:
-                quantidade = quantidade + 1
+                quantidade += 1
         return quantidade
 
     def nota_fiscal(self):
@@ -57,7 +57,7 @@ class Pedido:
     def valor_total_pagar(self):
         total_pagar = 0
         for produto in self.itens:
-            total_pagar = total_pagar + produto.preco
+            total_pagar += produto.preco
         return total_pagar
 
     def checkout(self, forma_pagamento=None):

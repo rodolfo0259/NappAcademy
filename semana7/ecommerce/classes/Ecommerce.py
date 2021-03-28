@@ -33,7 +33,7 @@ class Loja:
         quantidade = 0
         for produto in self.estoque:
             if produto.ean == ean:
-                quantidade = quantidade + 1
+                quantidade += 1
         return quantidade
 
     def comprar(self, ean):
@@ -48,5 +48,5 @@ class Loja:
             for item in pedido.itens:
                 if isinstance(item, Produto):
                     self._estoque.append(item)
-            pedido.itens = []
+            pedido.itens.clear()
             return pedido
